@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uvh-Xm-QOJ">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="5tJ-af-Ude">
+            <objects>
+                <tableViewController id="YkR-Wi-3aY" customClass="ShoppingListTableViewController" customModule="NewShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xwg-nE-kEJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" id="IKE-yw-Dpx" customClass="ButtonTableViewCell" customModule="NewShoppingList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IKE-yw-Dpx" id="Pk2-xd-1EA">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="3pn-kl-SFa">
+                                            <rect key="frame" x="5" y="-0.5" width="404" height="44.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OnQ-1M-sBP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="210" height="44.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MtT-2d-lrI">
+                                                    <rect key="frame" x="360" y="0.0" width="44" height="44.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="ZfV-QF-RrS"/>
+                                                        <constraint firstAttribute="height" constant="44" id="iRF-ga-hdj"/>
+                                                    </constraints>
+                                                    <state key="normal" image="incomplete copy"/>
+                                                    <connections>
+                                                        <action selector="buttonTapped:" destination="IKE-yw-Dpx" eventType="touchUpInside" id="UzI-wp-nEu"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3pn-kl-SFa" firstAttribute="leading" secondItem="Pk2-xd-1EA" secondAttribute="leading" constant="5" id="NQM-IC-Zf6"/>
+                                        <constraint firstItem="3pn-kl-SFa" firstAttribute="centerY" secondItem="Pk2-xd-1EA" secondAttribute="centerY" id="hKj-dz-hdV"/>
+                                        <constraint firstAttribute="trailing" secondItem="3pn-kl-SFa" secondAttribute="trailing" constant="5" id="sez-OJ-a1K"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="completeButton" destination="MtT-2d-lrI" id="GqW-ff-aVz"/>
+                                    <outlet property="primaryLabel" destination="OnQ-1M-sBP" id="jGl-0s-gtv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="YkR-Wi-3aY" id="Crk-Cz-yMg"/>
+                            <outlet property="delegate" destination="YkR-Wi-3aY" id="qyO-wn-atZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="9aX-15-J7M">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dJ1-fz-er0">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="YkR-Wi-3aY" id="5ki-rZ-YEx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gHb-lq-FX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="428.98550724637687" y="127.90178571428571"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GbG-6N-43Q">
+            <objects>
+                <navigationController id="Uvh-Xm-QOJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PlR-fj-Luv">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YkR-Wi-3aY" kind="relationship" relationship="rootViewController" id="Hif-Wk-I3n"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NZ6-b4-Igd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490" y="128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="incomplete copy" width="512" height="512"/>
+    </resources>
+</document>
